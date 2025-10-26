@@ -1,0 +1,476 @@
+
+    :root {
+        /* Colores Base */
+        --color-principal: #1f232b;
+        --color-fondo-ui: #2d323c; 
+        --color-fondo-claro: #f4f4e9; 
+        --color-oro: #dca454; 
+        --color-morado: #4e2cad;
+        --color-oro-hover: #ffcf7d;
+        --color-morado-hover: #522da8b4;
+        --color-texto-principal: #ede8ec;
+        --color-texto-secundario: #a6a39c;
+
+        /*Elementos */
+        --color-pyro: #ec4923;
+        --color-hydro: #00bfff;
+        --color-anemo: #359697;
+        --color-electro: #945dc4;
+        --color-dendro: #608a00;
+        --color-cryo: #4682b4;
+        --color-geo: #debd6c;
+
+        /* Estilos UI */
+        --fuente-titulo: 'Cinzel', serif;
+        --fuente-cuerpo: 'Noto Sans', sans-serif;
+        --borde-radio: 8px;
+        --sombra-ui: 0 4px 12px rgba(0, 0, 0, 0.7); 
+        --sombra-oro: 0 0 15px rgba(255, 207, 125, 0.8); 
+        --sombra-morado: 0 0 15px rgba(76, 44, 194, 0.8);
+    }
+
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        font-family: var(--fuente-cuerpo);
+        background-color: var(--color-principal);
+        color: var(--color-texto-principal);
+        line-height: 1.6;
+        background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), 
+                        url('https://fastcdn.hoyoverse.com/content-v2/plat/159364/c94d695cf703ea4f185b87b69dbc9d11_559163480569304486.jpg');
+        background-size: cover;
+        background-attachment: fixed;
+        background-position: center;
+    }
+
+    h1, h2, h3 {
+        font-family: var(--fuente-titulo);
+        color: var(--color-oro-hover);
+        text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.8);
+    }
+
+    /* -------------------- BARRA DE NAVEGACIÓN -------------------- */
+    .navbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 15px 5%;
+        background-color: rgba(15, 17, 21, 0.95);
+        border-bottom: 2px solid var(--color-oro);
+        box-shadow: var(--sombra-ui);
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+    }
+
+    .logo {
+        font-size: 1.8rem;
+        color: var(--color-oro-hover);
+        letter-spacing: 2px;
+    }
+
+    .logo-img {
+        height: 40px; 
+        width: auto;
+        vertical-align: middle; 
+    }
+
+    .navbar ul { list-style: none; display: flex; }
+    .navbar li { margin: 0 15px; }
+
+    .navbar a {
+        text-decoration: none;
+        color: var(--color-texto-principal);
+        font-weight: 700;
+        padding: 5px 10px;
+        transition: color 0.3s, text-shadow 0.3s;
+        border-bottom: 2px solid transparent;
+    }
+
+    .navbar a:hover {
+        color: var(--color-oro-hover);
+        text-shadow: 0 0 8px var(--color-oro-hover);
+        border-bottom: 2px solid var(--color-oro-hover);
+    }
+
+    /* Botones */
+    .login-btn {
+        background: linear-gradient(145deg, rgba(220, 164, 84, 0.2), rgba(220, 164, 84, 0.5));
+        border: 2px solid var(--color-oro);
+        color: var(--color-oro-hover);
+        padding: 8px 15px;
+        border-radius: 20px;
+        cursor: pointer;
+        transition: background-color 0.3s, box-shadow 0.3s, transform 0.2s;
+    }
+
+    .login-btn a{
+        font-weight: 200px;
+    }   
+
+    .login-btn:hover {
+        background: linear-gradient(145deg, rgba(255, 207, 125, 0.3), rgba(255, 207, 125, 0.6));
+        box-shadow: var(--sombra-oro);
+        transform: translateY(-2px);
+    }
+
+    /* -------------------- SECCIONES Y TARJETAS UI -------------------- */
+    .hero-section {
+        height: 90vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.6)), url('https://via.placeholder.com/1920x800/1e3a5f/f4f4e9?text=Arte+Principal+de+Genshin');
+        background-size: cover;
+        background-position: center;
+    }
+
+    .hero-content-box {
+        background-color: rgba(10, 10, 15, 0.75);
+        padding: 40px;
+        border-radius: var(--borde-radio);
+        border: 3px solid var(--color-oro);
+        box-shadow: var(--sombra-ui), var(--sombra-oro);
+        max-width: 700px;
+    }
+
+    .btn {
+        display: inline-block;
+        padding: 10px 20px;
+        text-decoration: none;
+        border-radius: 4px;
+        font-weight: 700;
+        transition: transform 0.2s, box-shadow 0.2s, background-color 0.2s;
+    }
+
+    .primary-btn {
+        background: var(--color-oro);
+        color: var(--color-principal);
+        border: none;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+    }
+
+    .primary-btn:hover {
+        background: var(--color-oro-hover);
+        transform: translateY(-2px);
+        box-shadow: 0 6px 10px rgba(0, 0, 0, 0.7), var(--sombra-oro);
+    }
+
+    .section-card {
+        padding: 60px 5%;
+        text-align: center;
+        margin: 60px auto;
+        max-width: 1400px;
+        background-color: var(--color-fondo-ui);
+        border-radius: var(--borde-radio);
+        border: 3px solid var(--color-oro);
+        box-shadow: var(--sombra-ui);
+        position: relative;
+        overflow: hidden;
+    }
+
+    /* -------------------- ELEMENTOS -------------------- */
+    .elements-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        gap: 20px;
+        margin-top: 40px;
+    }
+
+    .element-card {
+        padding: 20px 10px;
+        border-radius: var(--borde-radio);
+        cursor: pointer;
+        transition: transform 0.3s, box-shadow 0.3s;
+        background-color: var(--color-fondo-ui);
+        border: 2px solid;
+        transform: perspective(1000px) rotateX(5deg) rotateY(-5deg); 
+        opacity: 0.9;
+    }
+
+    .element-card:hover {
+        transform: perspective(1000px) rotateX(0deg) rotateY(0deg) scale(1.05);
+        opacity: 1;
+        z-index: 10;
+    }
+
+    .element-card h3 {
+        font-size: 1.5rem;
+        margin-bottom: 5px;
+        color: var(--color-texto-principal);
+        text-shadow: none;
+    }
+
+        /* visiones */
+    .element-icon {
+        width: 80px; 
+        height: 80px;
+        object-fit: cover;
+        object-position: center;
+        margin-bottom: 15px;
+        transition: transform 0.3s ease, border-color 0.3s;
+    }
+
+    .element-card:hover .element-icon {
+        transform: scale(1.1) rotate(5deg);
+        border-color: var(--color-oro-hover);
+    }
+
+    .element-card {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        min-height: 200px;
+    }
+
+    .element-card h3 {
+        margin-top: 10px;
+    }
+
+    /* Colores de Borde */
+    .pyro { border-color: var(--color-pyro); }
+    .pyro:hover { box-shadow: 0 0 20px var(--color-pyro); }
+
+    .hydro { border-color: var(--color-hydro); }
+    .hydro:hover { box-shadow: 0 0 20px var(--color-hydro); }
+
+    .anemo { border-color: var(--color-anemo); }
+    .anemo:hover { box-shadow: 0 0 20px var(--color-anemo); }
+
+    .electro { border-color: var(--color-electro); }
+    .electro:hover { box-shadow: 0 0 20px var(--color-electro); }
+
+    .dendro { border-color: var(--color-dendro); }
+    .dendro:hover { box-shadow: 0 0 20px var(--color-dendro); }
+
+    .cryo { border-color: var(--color-cryo); }
+    .cryo:hover { box-shadow: 0 0 20px var(--color-cryo); }
+
+    .geo { border-color: var(--color-geo); }
+    .geo:hover { box-shadow: 0 0 20px var(--color-geo); }
+
+
+    /* -------------------- ARTEFACTOS -------------------- */
+
+    .artifact-panel {
+        display: flex;
+        justify-content: center;
+        gap: 40px;
+        margin-top: 40px;
+        background-color: rgba(30, 35, 40, 0.9); 
+        border: 1px solid var(--color-oro);
+        padding: 30px;
+        border-radius: var(--borde-radio);
+        box-shadow: var(--sombra-ui);
+        max-width: 800px;
+        margin: 40px auto 0;
+    }
+
+    .artifact-icon {
+        width: 150px;
+        height: 150px;
+        background-color: var(--color-oro);
+        border-radius: 50%;
+        border: 5px solid var(--color-oro-hover);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        box-shadow: var(--sombra-oro);
+        background-size: cover;
+    }
+
+    .rarity-star {
+        position: absolute;
+        bottom: -10px;
+        font-size: 1.5rem;
+        color: var(--color-oro-hover);
+        text-shadow: 0 0 8px #fff;
+        letter-spacing: 5px;
+    }
+
+    .artifact-details {
+        text-align: left;
+    }
+
+    .artifact-name {
+        font-size: 1.8rem;
+        color: var(--color-oro-hover);
+        margin-bottom: 5px;
+    }
+
+    .artifact-set {
+        color: var(--color-texto-secundario);
+        font-style: italic;
+        margin-bottom: 20px;
+    }
+
+    .main-stat {
+        background-color: rgba(255, 255, 255, 0.1);
+        padding: 10px;
+        border-radius: 4px;
+        margin-bottom: 20px;
+        border-left: 5px solid var(--color-oro-hover);
+    }
+
+    .stat-name {
+        display: block;
+        font-weight: 700;
+        color: var(--color-fondo-claro);
+    }
+
+    .stat-value {
+        font-size: 1.5rem;
+        color: var(--color-oro-hover);
+    }
+
+    .sub-stats ul {
+        list-style: none;
+        padding-left: 0;
+    }
+
+    .sub-stats li {
+        color: var(--color-texto-secundario);
+        margin-bottom: 5px;
+        border-bottom: 1px dashed rgba(255, 255, 255, 0.1);
+        padding-bottom: 3px;
+    }
+    .sub-stats li:last-child {
+        border-bottom: none;
+    }
+
+    /* -------------------- PERSONAJES (Bordes de Elemento) -------------------- */
+
+    .character-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 30px;
+        margin-top: 20px;
+    }
+
+    .character-card {
+        background-color: var(--color-fondo-ui);
+        padding: 20px;
+        border-radius: var(--borde-radio);
+        border: 3px solid;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+        transition: transform 0.3s, box-shadow 0.3s;
+        background-image: url('https://via.placeholder.com/280x150/404040/fff?text=Retrato');
+        background-size: cover;
+        background-position: center top;
+        height: 300px;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        text-align: left;
+    }
+
+    .character-card:hover {
+        transform: translateY(-5px);
+        z-index: 10;
+    }
+
+    .char-name {
+        font-size: 1.8rem;
+        background-color: rgba(0, 0, 0, 0.6);
+        padding: 5px;
+        margin: 0;
+        border-radius: 3px;
+    }
+    .char-title {
+        font-size: 1rem;
+        color: var(--color-texto-secundario);
+        background-color: rgba(0, 0, 0, 0.6);
+        padding: 5px;
+        margin-top: 5px;
+        border-radius: 3px;
+    }
+
+
+    .anemo-border { border-color: var(--color-anemo); }
+    .anemo-border:hover { box-shadow: 0 0 20px var(--color-anemo); }
+
+    .electro-border { border-color: var(--color-electro); }
+    .electro-border:hover { box-shadow: 0 0 20px var(--color-electro); }
+
+    .hydro-border { border-color: var(--color-hydro); }
+    .hydro-border:hover { box-shadow: 0 0 20px var(--color-hydro); }
+
+    .dendro-border { border-color: var(--color-dendro); }
+    .dendro-border:hover { box-shadow: 0 0 20px var(--color-dendro); }
+
+
+    .flins-bg {
+        background-image: url('https://i0.wp.com/www.gamerfocus.co/wp-content/uploads/2025/08/image-290.png?resize=1024%2C656&ssl=1');
+    }
+
+    .lauma-bg {
+        background-image: url('https://genshin.ch/templates/assets/img/avatar_icons/a119_gacha_splash.webp');
+    }
+
+    .ineffa-bg {
+        background-image: url('https://64.media.tumblr.com/0266e32da46ae243ed6d39c28a91de05/691e8b208e0d0f7e-e2/s1280x1920/728482bfea6fab58019c76a197ec17b921b7faf7.png');
+    }
+    
+    .nefer-bg {
+        background-image: url('https://gi.yatta.moe/assets/UI/UI_Gacha_AvatarImg_Nefer.png?vh=2024123000');
+    }
+    
+    .aino-bg {
+        background-image: url('https://gi.yatta.moe/assets/UI/UI_Gacha_AvatarImg_Aino.png?vh=2024123000');
+    }
+    
+    .jahoda-bg {
+        background-image: url('img/Jahoda.png');
+    }
+
+    /* -------------------- PRÓXIMAMENTE -------------------- */
+
+    .marketing-grid {
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
+        gap: 30px;
+        margin-top: 40px;
+    }
+
+    .marketing-card {
+        background-color: var(--color-fondo-ui);
+        border-radius: var(--borde-radio);
+        border: 3px solid var(--color-morado);
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+        transition: transform 0.3s, box-shadow 0.3s;
+        overflow: hidden;
+        text-align: left;
+    }
+
+    .marketing-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 0 20px var(--color-morado-hover);
+        z-index: 10;
+    }
+
+    .marketing-card img {
+        width: 100%;
+        height: auto;
+        display: block;
+        object-fit: cover;
+        transition: transform 0.5s ease;
+    }
+
+    .marketing-card:hover img {
+        transform: scale(1.05);
+    }
+
+    footer {
+        text-align: center;
+        padding: 20px;
+        background-color: rgba(10, 10, 15, 0.95);
+        border-top: 1px solid var(--color-oro);
+        font-size: 0.9rem;
+        color: var(--color-texto-secundario);
+    }
